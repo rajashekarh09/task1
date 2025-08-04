@@ -1,0 +1,31 @@
+Identify potential security risks from open ports.
+------------------------------------------------
+1. Port 22 (SSH)
+   - Service: Secure Shell (SSH)
+   - Risk: If weak passwords are used or outdated versions are running, attackers can brute-force access.
+   - Recommendation: Use key-based authentication and disable root login.
+
+2. Port 23 (Telnet)
+   - Service: Telnet
+   - Risk: Transmits data in plain text, including credentials. Easily intercepted.
+   - Recommendation: Disable Telnet and use SSH instead.
+
+3. Port 80 (HTTP)
+   - Service: Web server (HTTP)
+   - Risk: Transmits unencrypted data. Vulnerable to MITM attacks.
+   - Recommendation: Redirect to HTTPS (port 443).
+
+4. Port 139/445 (NetBIOS/SMB)
+   - Service: Windows file sharing (SMB)
+   - Risk: Frequently targeted in attacks (e.g., WannaCry ransomware). Risky if exposed to internet.
+   - Recommendation: Disable if not needed. Patch regularly.
+
+5. Port 443 (HTTPS)
+   - Service: Secure web server
+   - Risk: Generally safe if SSL/TLS is properly configured.
+   - Recommendation: Use strong certificates, disable outdated protocols (e.g., SSLv2).
+
+6. Port 515 (LPD - Line Printer Daemon)
+   - Service: Printer sharing
+   - Risk: Outdated and insecure protocol. Can be used to flood print jobs or extract print data.
+   - Recommendation: Disable unless necessary.
